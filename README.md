@@ -19,3 +19,8 @@
 	}
 
 ```
+## Dependence
+* [FlycoTabLayout](https://github.com/H07000223/FlycoTabLayout#dependence)
+* [Fragmentation](https://github.com/YoKeyword/Fragmentation)
+* [ImmersionBar](https://github.com/gyf-dev/ImmersionBar)
+* [SmartRefreshLayout](https://github.com/scwang90/SmartRefreshLayout)
