@@ -17,7 +17,7 @@
 **Step 2.** Add the dependency
 ```
 	dependencies {
-	        compile 'com.github.moxiaoer:EasyWork:v1.0.1-beta.1'
+	        compile 'com.github.moxiaoer:EasyWork:1.0.0'
 	}
 
 ```
