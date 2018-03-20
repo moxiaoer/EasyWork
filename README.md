@@ -1,5 +1,7 @@
 # EasyWork
 
+**[WIKI](https://github.com/moxiaoer/EasyWork/wiki)**
+
 ## start
 
 **Step 1.** Add the JitPack repository to your build file 
