@@ -25,10 +25,3 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
-
-ext {
-
-    fragmentation = '1.2.4'
-    barlibrary = '2.3.0'
-    tablayout = '2.1.2@aar'
-}
