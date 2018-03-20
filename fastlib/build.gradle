@@ -1,0 +1,41 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 26
+
+
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+    // 为"单Activity ＋ 多Fragment","多模块Activity + 多Fragment"架构而生,替代官方fragment
+    compile "me.yokeyword:fragmentation:$rootProject.fragmentation"
+    //沉浸式库
+    compile "com.gyf.barlibrary:barlibrary:$rootProject.barlibrary"
+    //viewpager指示器 与 导航栏控件
+    compile "com.flyco.tablayout:FlycoTabLayout_Lib:$rootProject.tablayout"
+}
