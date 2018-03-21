@@ -1,14 +1,18 @@
 package com.withyou.fastlib.base;
 
 import android.os.Bundle;
+import android.support.annotation.DrawableRes;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewStub;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.gyf.barlibrary.ImmersionBar;
 import com.withyou.fastlib.R;
@@ -32,6 +36,7 @@ public abstract class BaseFragment<T extends BasePresenter, E extends BaseModel>
 
     public T mPresenter;
     public E mModel;
+    protected View emptyView;
 
     @Nullable
     @Override
@@ -209,5 +214,25 @@ public abstract class BaseFragment<T extends BasePresenter, E extends BaseModel>
         ((InputMethodManager) getActivity().getSystemService(INPUT_METHOD_SERVICE))
                 .hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(),
                         InputMethodManager.HIDE_NOT_ALWAYS);
+    }
+
+    /**
+     * 获取只有图片和文字描述的view
+     * @param str
+     * @param drawRes
+     * @return
+     */
+    public View getEmptyView(String str, @DrawableRes int drawRes) {
+        if (emptyView != null) {
+            return emptyView;
+        }
+        emptyView = LayoutInflater.from(_mActivity).inflate(R.layout.layout_empty_view, null, false);
+        if (!TextUtils.isEmpty(str)) {
+            TextView textView = emptyView.findViewById(R.id.tv_text);
+            ImageView imageView = emptyView.findViewById(R.id.iv_empty);
+            imageView.setImageResource(drawRes);
+            textView.setText(str);
+        }
+        return emptyView;
     }
 }
